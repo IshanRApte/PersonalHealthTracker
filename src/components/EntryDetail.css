@@ -1,0 +1,33 @@
+.entry-detail {
+  margin-top: 20px;
+  max-width: 500px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.back-btn {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background-color: #4caf50;
+  color: #3e3a3a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #f9c701;
+}

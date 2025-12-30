@@ -1,0 +1,19 @@
+.past-entries {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.date-btn {
+  padding: 8px 15px;
+  background-color: #4caf50;
+  color: #3e3a3a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.date-btn:hover {
+  background-color: #f9c701;
+}
