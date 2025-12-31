@@ -11,7 +11,7 @@ function HealthForm({ onAdd }) {
     e.preventDefault();
     const now = new Date();
     const entry = {
-      date: now.toISOString().split("T")[0], // YYYY-MM-DD
+      date: now.toISOString().split("T")[0],
       time: now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       weight: parseFloat(weight),
       heartRate: parseInt(heartRate),

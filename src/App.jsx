@@ -1,13 +1,14 @@
+import { Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
 import HealthForm from "./components/HealthForm";
 import PastEntries from "./components/PastEntries";
 import EntryDetail from "./components/EntryDetail";
+import Trends from "./components/Trends";
+import "./App.css";
 
 function App() {
   const [entries, setEntries] = useState([]);
 
-  // Load entries from localStorage
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("healthData")) || [];
     setEntries(saved);
@@ -20,24 +21,28 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+    <div className="app-container">
       <h1>Personal Health Dashboard</h1>
+
       <Routes>
-        {/* Home: form + past entries */}
         <Route
           path="/"
           element={
             <>
-              <HealthForm onAdd={addEntry} />
+              <div className="form-wrapper">
+                <HealthForm onAdd={addEntry} />
+                <Link to="/trends">
+                  <button className="view-trends-btn">View Trends</button>
+                </Link>
+              </div>
+
               <PastEntries entries={entries} />
             </>
           }
         />
-        {/* Entry details page */}
-        <Route
-          path="/entry/:datetime"
-          element={<EntryDetail entries={entries} />}
-        />
+
+        <Route path="/entry/:datetime" element={<EntryDetail entries={entries} />} />
+        <Route path="/trends" element={<Trends />} />
       </Routes>
     </div>
   );

@@ -6,7 +6,7 @@ function PastEntries({ entries }) {
 
   return (
     <div className="past-entries">
-      <h2>Past Entries</h2>
+
       {entries.map((e) => (
         <Link key={`${e.date}-${e.time}`} to={`/entry/${e.date}-${e.time}`}>
           <button className="date-btn">
